@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="portada" class="pantalla">
+        <header class="header">
+            <h1>Hola mi amoooor,esto es algo muy pequeño pero lo hice con mucho amor para ti, espero te guste,corazón mío </h1>
+            <button onclick="abrirMenu()">Abrir</button>
+        </header>
+    </div>
+
+    <div id="menu" class="pantalla oculto">
+        <header class="header">
+            <h1>Menú de mi amor por ti</h1>
+        </header>
+        <ul>
+            <li>Lo que siento por ti,corazón <button onclick="abrirPoema()">Abrir</button></li>
+            <li>la ultima vez que me enamore de ti<button onclick="abrirRazon()">Abrir</button></li>
+            <li>Entra mi amor -> <button onclick="abrirMensaje()">Entra</button></li>
+        </ul>
+    </div>
+
+    <div id="poema" class="pantalla oculto">
+        <h2>Lo que siento por ti</h2>
+        <p>Por ti tengo tantas emociones, al verte sonreir, al escucharte reir,al verte nerviso, al escucharte enojado, etc.
+        Desde el día que te conocí, todas las sensaciones son distintas y cambian de manera constante cuando hablamos,
+        son pocas palabras para tantas sensaciones que tengo por ti, mi borreguito, entonces, ¿qué siento por ti? 
+        Todo lo que no se puede explicar con palabras es todo lo que siento por ti, mi amor.
+        </p>
+        <button onclick="volverMenu()">Regresar</button>
+        <button onclick="abrirTeAmo()">Te Amo</button>
+    </div>
+
+    <div id="teamo" class="pantalla oculto">
+        <h2>Yo también te amo, mi amor</h2>
+        <img src="amor.jpg" alt="te amo">
+        <button onclick="volverMenu()">Volver al menú</button>
+    </div>
+
+    <div id="razon" class="pantalla oculto">
+        <h2>La ultima vez que me enamore de ti</h2>
+        <p> La ultima vez que me enamore de ti fue el día que desperte para decirte de esta sorpresa,
+            después de esa vez estoy segura que la hora y la ultima vez que me enamore de ti volvió a cambiar.
+        </p>
+        <img src="amoor.jpg" alt="te amo tanto mi amor">
+        <button onclick="volverMenu()">Volver</button>
+        <button onclick="abrirBesos()">Besos</button>
+    </div>
+
+    <div id="besos" class="pantalla oculto">
+        <h2>Cuenta las veces que te amo, mi amoor</h2>
+        <p>
+            te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo,
+            te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo,te amo.
+            TE AMO mi lindo y bello borreguito.
+        </p>
+        <button onclick="volverMenu()">Volver al menú</button>
+    </div>
+
+    <div id="mensaje" class="pantalla oculto">
+        <h2>Para ti</h2>
+        <p>Eres lo más bonito,lindo y magico que le ha pasado a mi vida.Cunado me necesites y también cuando no lo hagas, si un día quieres llorar o sientes que no puedes con todo,
+        aquí estaré siempre para ti, mi amor.
+        Espero que te haya gustado, y Ojalá te haya hecho muy feliz porque me gusta y me encanta cuando sonríes y eres feliz. Mantengo tu linda y preciosa sonrisa guardada en mi corazón. Te amo mi amor.</p>
+        <button onclick="terminar()">Te Amo</button>
+    </div>
+
+    <script>
+        function abrirMenu() {
+            cambiarPantalla('portada', 'menu');
+        }
+
+        function abrirPoema() {
+            cambiarPantalla('menu', 'poema');
+        }
+
+        function abrirTeAmo() {
+            cambiarPantalla('poema', 'teamo');
+        }
+
+        function abrirRazon() {
+            cambiarPantalla('menu', 'razon');
+        }
+
+        function abrirBesos() {
+            cambiarPantalla('razon', 'besos');
+        }
+
+        function abrirMensaje() {
+            cambiarPantalla('menu', 'mensaje');
+        }
+
+        function volverMenu() {
+            document.querySelectorAll('.pantalla').forEach(p => p.classList.add('oculto'));
+            document.getElementById('menu').classList.remove('oculto');
+        }
+
+        function terminar() {
+            alert('Gracias por visitar este espacio, mi amor. Te amo mucho.');
+        }
+
+        function cambiarPantalla(actual, siguiente) {
+            document.getElementById(actual).classList.add('oculto');
+            document.getElementById(siguiente).classList.remove('oculto');
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d5e2eb;
+            color: #333;
+            text-align: center;
+        }
+
+        .pantalla {
+            display: none;
+        }
+
+        .pantalla:not(.oculto) {
+            display: block;
+            padding: 20px;
+        }
+
+        .header {
+            background-color:#046fc2;
+            color: #FFFFFF;
+            padding: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #3b96e6;
+            color: #FFFFFF;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #3c7aaf;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+    </style>
+</body>
+</html>
